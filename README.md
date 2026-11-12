@@ -1,5 +1,7 @@
 # Wire Harness Tester
 
+[![CI](https://github.com/J0hnnyLaw714/wire-harness-tester/actions/workflows/ci.yml/badge.svg)](https://github.com/J0hnnyLaw714/wire-harness-tester/actions/workflows/ci.yml)
+
 A Python continuity tester for wire harnesses. It checks a harness against its
 pinout diagram (for example, pin 1 on connector A must reach pin A8 on
 connector B) and finds **opens**, **miswires** and **shorts**. It knows the
@@ -78,7 +80,14 @@ passive harness with no power on it.
 
 ```bash
 python3 -m unittest discover tests
+ruff check .
 ```
+
+GitHub Actions (`.github/workflows/ci.yml`) runs on every push and pull request:
+- a ruff lint check
+- the unit tests on Python 3.9, 3.11 (Raspberry Pi OS Bookworm) and 3.13
+- two simulated end-to-end runs: a good harness must reach "WIRING PASS", and a
+  faulty one must FAIL
 
 ## Files
 

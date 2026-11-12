@@ -1,0 +1,14 @@
+[project]
+name = "wire-harness-tester"
+version = "0.2.0"
+description = "Wire harness continuity tester with IPC/WHMA-A-620 class settings"
+readme = "README.md"
+requires-python = ">=3.9"
+
+[tool.ruff]
+line-length = 110
+target-version = "py39"
+
+[tool.ruff.lint]
+# pycodestyle errors/warnings, pyflakes, bugbear, import sorting
+select = ["E", "F", "W", "B", "I"]
